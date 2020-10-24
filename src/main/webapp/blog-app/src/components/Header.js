@@ -44,6 +44,9 @@ const Header = () => {
 				<li>
 					<Link to="/Join">Join</Link>
 				</li>
+        <li>
+					<Link to="/Team_create">create team</Link>
+				</li>
 			</ul>
 			<hr />
 		</div>

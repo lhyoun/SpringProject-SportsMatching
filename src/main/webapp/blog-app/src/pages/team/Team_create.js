@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 
+const Team_create = () => {
+	const [team, setTeam] = useState({
+		teamname: "",
+	});
 
-const JoinForm = () => {
+
 	const joinRequest = () => {
-		let person = {
-			username: user.username,
-			password: user.password
+		let team2 = {
+			teamname: team.teamname,
 		}
 
-		fetch("http://localhost:8000/joinProc", {
+		fetch("http://localhost:8000/joinProc2", {
 			method: "POST",
-			body: JSON.stringify(person),
+			body: JSON.stringify(team2),
 			headers: {
 				'Content-Type': "application/json; charset=utf-8"
 			}
@@ -23,14 +26,10 @@ const JoinForm = () => {
 	}
 
 
-	const [user, setUser] = useState({
-		username: "",
-		password: "",
-	});
 
 	const inputHandle = (e) => {
-		setUser({
-			...user,
+		setTeam({
+			...team,
 			[e.target.name]: e.target.value,
 		});
 	};
@@ -39,26 +38,16 @@ const JoinForm = () => {
 		<Container>
 			<input
 				type="text"
-				name="username"
-				placeholder="username"
+				name="teamname"
+				placeholder="teamname"
 				onChange={inputHandle}
-				value={user.username}
+				value={team.teamname}
 			/>
 			<br />
-			<input
-				type="text"
-				name="password"
-				placeholder="password"
-				onChange={inputHandle}
-				value={user.password}
-			/>
-			<br />
-			<hr />
 			<button onClick={joinRequest}>join</button>
-			<br />
-			<hr />
+
 		</Container>
 	);
 };
 
-export default JoinForm;
+export default Team_create;

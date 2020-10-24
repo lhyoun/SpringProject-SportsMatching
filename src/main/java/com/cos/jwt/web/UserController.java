@@ -18,7 +18,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @RestController
-public class IndexController {
+public class UserController {
 	
 	private final PersonRepository personRepository;
 	
@@ -30,7 +30,6 @@ public class IndexController {
 	
 	@PostMapping("/joinProc")
 	public String 회원가입(@RequestBody Person person) {
-		
 		personRepository.save(person);
 		return "ok";
 	}

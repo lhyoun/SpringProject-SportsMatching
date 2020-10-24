@@ -4,6 +4,7 @@ import LoginForm from './pages/user/LoginForm';
 import Header from './components/Header';
 import MainForm from './pages/MainForm';
 import JoinForm from './pages/user/JoinForm';
+import Team_create from './pages/team/Team_create';
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
       <Route path="/" exact={true} component={MainForm}></Route>
       <Route path="/Login" exact={true} component={LoginForm}></Route>
       <Route path="/Join" exact={true} component={JoinForm}></Route>
-
+      <Route path="/Team_create" exact={true} component={Team_create}></Route>
     </div>
   );
 };
