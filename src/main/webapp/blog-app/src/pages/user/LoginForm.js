@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
 
 function LoginForm() {
   const [user, setUser] = useState({
@@ -79,7 +80,7 @@ function LoginForm() {
   }, []);
 
   return (
-    <div>
+    <Container>
       <input
         type="text"
         name="username"
@@ -118,7 +119,7 @@ function LoginForm() {
       3. login : db에 저장된 id, pw를 비교해서 맞으면 ok가 뜨고 토큰이 생성된다. id는 입력할 필요 없다<br/>
       4. detail : id 1번의 user data를 select해서 fetch해온다. 성공하면 state로 관리되는 input창 3개에 data가 뜬다<br/>
       <hr/>
-    </div>
+    </Container>
   );
 }
 
